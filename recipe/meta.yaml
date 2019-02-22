@@ -1,4 +1,4 @@
-{% set version = '2.0.5' %}
+{% set version = "2.2-32" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ashr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ashr/ashr_{{ version }}.tar.gz
-  sha256: bf3864a868f3224a81a38233d9a25990b63316446dd2f86397dc2a76630a992e
+  sha256: 640b5720cc802d35a8d62af38f2d922437426ab7035bc848d2c3dff00481734c
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   skip: true  # [win32]
 
   rpaths:
