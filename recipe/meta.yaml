@@ -12,7 +12,7 @@ source:
   sha256: 7fa1957ed3cf0f1f20939b6ebf71fc04ab983ca77616f7b80ce9e9e6fad457c9
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,6 +31,13 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-matrix                     # [build_platform != target_platform]
+    - r-rcpp >=0.10.5              # [build_platform != target_platform]
+    - r-squarem                    # [build_platform != target_platform]
+    - r-etrunct                    # [build_platform != target_platform]
+    - r-invgamma                   # [build_platform != target_platform]
+    - r-mixsqp                     # [build_platform != target_platform]
+    - r-truncnorm                  # [build_platform != target_platform]
   host:
     - r-base
     - r-matrix
@@ -61,7 +68,6 @@ about:
   summary: "The R package 'ashr' implements an Empirical Bayes approach for large-scale hypothesis testing and false discovery rate (FDR) estimation based on the methods proposed in M. Stephens, 2016, \"False discovery rates: a new deal\", <DOI:10.1093/biostatistics/kxw041>. These methods can be applied whenever two sets
     of summary statistics---estimated effects and standard errors---are available, just as 'qvalue' can be applied to previously computed p-values. Two main interfaces are provided: ash(), which is more user-friendly; and ash.workhorse(), which has more options and is geared toward advanced users. The ash() and ash.workhorse()
     also provides a flexible modeling interface that can accommodate a variety of likelihoods (e.g., normal, Poisson) and mixture priors (e.g., uniform, normal)."
-  license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
